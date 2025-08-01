@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Casahue</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function () {
+      $("#navbar-container").load("navbar.html");
+    });
+  </script>
+       
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col w-[512px] max-w-[512px] py-5 max-w-[960px] flex-1">
+            <h2 class="text-[#121517] tracking-light text-[28px] font-bold leading-tight px-4 text-center pb-3 pt-5">Reset Password Code</h2>
+            <p class="text-[#121517] text-base font-normal leading-normal pb-3 pt-1 px-4 text-center">
+              We've sent a code to your email address. Please enter it below to reset your password.
+            </p>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <input
+                  placeholder="Enter code"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#121517] focus:outline-0 focus:ring-0 border border-[#dde1e4] bg-white focus:border-[#dde1e4] h-14 placeholder:text-[#687782] p-[15px] text-base font-normal leading-normal"
+                  value=""
+                />
+              </label>
+            </div>
+            <div class="flex px-4 py-3 justify-center">
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#4e92ca] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <a class="truncate" href="newpassword.html">Submit Code</a>
+              </button>
+            </div>
+            <p class="text-[#687782] text-sm font-normal leading-normal pb-3 pt-1 px-4 text-center underline">Didn't receive the code? Resend</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

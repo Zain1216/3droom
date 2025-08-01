@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DreamRoom 3D – Design Your Bedroom in Real-Time</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1>3D room – Design Before You Buy</h1>
+    </header>
+        <div class="container">
+            <aside class="left-panel">
+                <h2>Bedroom Category</h2>
+                <select id="bedroomCategory" name="bedroomCategory">
+                    <option value="1bed">1 Bed</option>
+                    <option value="2bed">2 Bed</option>
+                    <option value="3bed">3 Bed</option>
+                    <option value="4bed">4 Bed</option>
+                </select>
+
+                <h2>3D Motion Control</h2>
+                <button type="button" id="toggleMotionBtn">Lock 3D Motion</button>
+
+                <h2>Room 1 Name</h2>
+                <input type="text" id="room1Name" name="room1Name" value="Room 1" />
+
+                <h2>Room 1 Width (ft.)</h2>
+                <input type="number" id="roomWidth" name="roomWidth" min="5"  value="50" />
+
+                <h2>Room 1 Height (ft.)</h2>
+                <input type="number" id="roomHeight" name="roomHeight" min="5" value="50" />
+
+                <h2>Room 1 Wall Color</h2>
+                <input type="color" id="room1WallColor" name="room1WallColor" value="#222222" />
+
+                <h2>Room 1 Floor Color</h2>
+                <input type="color" id="room1FloorColor" name="room1FloorColor" value="#474747" />
+
+                <div id="secondRoomInputs" style="display:none;">
+                    <h2>Room 2 Name</h2>
+                    <input type="text" id="room2Name" name="room2Name" value="Room 2" />
+
+                    <h2>Room 2 Width (ft.)</h2>
+                    <input type="number" id="room2Width" name="room2Width" min="5"  value="50" />
+
+                    <h2>Room 2 Height (ft.)</h2>
+                    <input type="number" id="room2Height" name="room2Height" min="5"  value="50" />
+
+                    <h2>Room 2 Wall Color</h2>
+                    <input type="color" id="room2WallColor" name="room2WallColor" value="#222222" />
+
+                    <h2>Room 2 Floor Color</h2>
+                    <input type="color" id="room2FloorColor" name="room2FloorColor" value="#474747" />
+                </div>
+
+                <div id="thirdRoomInputs" style="display:none;">
+                    <h2>Room 3 Name</h2>
+                    <input type="text" id="room3Name" name="room3Name" value="Room 3" />
+
+                    <h2>Room 3 Width (ft.)</h2>
+                    <input type="number" id="room3Width" name="room3Width" min="5"  value="50" />
+
+                    <h2>Room 3 Height (ft.)</h2>
+                    <input type="number" id="room3Height" name="room3Height" min="5"  value="50" />
+
+                    <h2>Room 3 Wall Color</h2>
+                    <input type="color" id="room3WallColor" name="room3WallColor" value="#222222" />
+
+                    <h2>Room 3 Floor Color</h2>
+                    <input type="color" id="room3FloorColor" name="room3FloorColor" value="#474747" />
+                </div>
+
+                <div id="fourthRoomInputs" style="display:none;">
+                    <h2>Room 4 Name</h2>
+                    <input type="text" id="room4Name" name="room4Name" value="Room 4" />
+
+                    <h2>Room 4 Width (ft.)</h2>
+                    <input type="number" id="room4Width" name="room4Width" min="5"  value="50" />
+
+                    <h2>Room 4 Height (ft.)</h2>
+                    <input type="number" id="room4Height" name="room4Height" min="5"  value="50" />
+
+                    <h2>Room 4 Wall Color</h2>
+                    <input type="color" id="room4WallColor" name="room4WallColor" value="#222222" />
+
+                    <h2>Room 4 Floor Color</h2>
+                    <input type="color" id="room4FloorColor" name="room4FloorColor" value="#474747" />
+                </div>
+
+                <h2>Furniture Options</h2>
+                <label><input type="checkbox" name="furniture" value="bed"  /> Bed</label>
+                <input type="number" id="bedQuantity" name="bedQuantity" min="1" value="1" style="width: 50px; margin-left: 10px;" />
+                <br />
+                <!-- New inputs for bed width, height, and color -->
+                <label for="bedWidth">Bed Width (units):</label>
+                <input type="number" id="bedWidth" name="bedWidth" min="0.1" step="0.1" value="1.2" style="width: 80px; margin-left: 10px;" />
+                <br />
+                <label for="bedHeight">Bed Height (units):</label>
+                <input type="number" id="bedHeight" name="bedHeight" min="0.1" step="0.1" value="1.5" style="width: 80px; margin-left: 10px;" />
+                <br />
+                <label for="bedColor">Bed Color:</label>
+                <input type="color" id="bedColor" name="bedColor" value="#8B4513" style="width: 80px; margin-left: 10px;" />
+                <br />
+                <label><input type="checkbox" name="furniture" value="table" /> Table</label>
+                <input type="number" id="tableQuantity" name="tableQuantity" min="1" value="1" style="width: 50px; margin-left: 10px;" />
+                <br />
+                <label><input type="checkbox" name="furniture" value="lights" /> Lights</label>
+                <input type="number" id="lightsQuantity" name="lightsQuantity" min="1" value="1" style="width: 50px; margin-left: 10px;" />
+
+                <h2>Background Color</h2>
+                <input type="color" id="backgroundColor" name="backgroundColor" value="#f0f0f0" />
+            </aside>
+            <main class="right-panel">
+                <div id="container3D"></div>
+            </main>
+        </div>
+    <footer>
+        <button id="resetBtn">Reset</button>
+        <select id="imageFormatSelector">
+            <option value="png">PNG</option>
+            <option value="jpeg">JPG</option>
+        </select>
+        <button id="exportBtn">Export as Image</button>
+    </footer>
+    <script type="module" src="app.js"></script>
+    <div id="notification" style="position: fixed; bottom: 20px; right: 20px; background: rgba(0,0,0,0.7); color: white; padding: 10px 20px; border-radius: 5px; display: none; z-index: 1000; font-family: Arial, sans-serif; font-size: 14px;"></div>
+</body>
+</html>
